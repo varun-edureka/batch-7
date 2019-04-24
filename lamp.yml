@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  connection: ssh
+  become: true
+  tasks:
+  - name: Install httpd
+    yum:
+        name: httpd
+        state: latest
+
+  - name: Install PHP
+    yum:
+        name: php
+        state: present
+
+  - name: Install htop
+    yum: 
+        name: htop
+        state: present
+
+  - name: Start httpd
+    service:
+        name: httpd
+        state: started
+
+  - name: Enable httpd 
+    service:
+        name: httpd
+        state: enabled
