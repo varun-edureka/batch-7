@@ -27,3 +27,15 @@
     service:
         name: httpd
         state: enabled
+
+
+
+  - name: Start httpd
+    service:
+        name: httpd
+        state: started
+
+  - name: Enable httpd
+    service:
+        name: httpd
+        state: enabled
